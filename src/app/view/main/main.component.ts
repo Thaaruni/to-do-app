@@ -4,9 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-main',
   standalone: false,
   template: `
-    <p class="bg-blue-100">
-      main works!
-    </p>
+    <app-header />
+    <app-form />
   `,
   styles: ``
 })
