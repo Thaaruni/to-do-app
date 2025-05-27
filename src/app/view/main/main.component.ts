@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   template: `
     <app-header />
     <app-form />
+    <app-task/>
   `,
   styles: ``
 })

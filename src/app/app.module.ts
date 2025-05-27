@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './view/main/main.component';
 import { HeaderComponent } from './view/header/header.component';
 import { FormComponent } from './view/form/form.component';
+import { TaskComponent } from './view/task/task.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FormComponent } from './view/form/form.component';
     AppComponent,
     MainComponent,
     HeaderComponent,
-    FormComponent
+    FormComponent,
+    TaskComponent
 
   ],
   imports: [
