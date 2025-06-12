@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +12,7 @@ import { Component } from '@angular/core';
                 task_alt
             </span>
           To-do App</h1>
-        <div  (click)="userMenu.classList.toggle('hidden'); userMenu.classList.toggle('flex')"
+        <div #avatar (click)="onAvatarClick($event, avatar)"
              class="bg-contain relative w-9 border bg-sky-500 border-gray-700 cursor-pointer rounded-full hover:shadow-lg hover:shadow-cyan-900 flex justify-center items-center text-white font-bold">U
 
           <div #userMenu
@@ -33,5 +33,22 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+@ViewChild('userMenu')
+  userMenuElm!: ElementRef<HTMLDivElement>
 
+  @HostListener('document:click')
+  onDocumentClick(){
+  const userMenu = this.userMenuElm.nativeElement;
+  if(userMenu.classList.contains("flex")){
+    userMenu.classList.toggle('flex');
+    userMenu.classList.toggle('hidden');
+  }
+  }
+
+  onAvatarClick($event: MouseEvent ,avatar: HTMLDivElement){
+  $event.stopPropagation();
+  if($event.target != avatar) return;
+  this.userMenuElm.nativeElement.classList.toggle('flex')
+  this.userMenuElm.nativeElement.classList.toggle('hidden')
+  }
 }

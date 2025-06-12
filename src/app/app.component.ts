@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `<app-main/>`,
+  template: `<app-login/>`,
   standalone: false,
   styleUrl: './app.component.scss'
 })

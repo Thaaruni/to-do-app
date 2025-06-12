@@ -7,6 +7,8 @@ import { MainComponent } from './view/main/main.component';
 import { HeaderComponent } from './view/header/header.component';
 import { FormComponent } from './view/form/form.component';
 import { TaskComponent } from './view/task/task.component';
+import { TaskListComponent } from './view/task-list/task-list.component';
+import { LoginComponent } from './view/login/login.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { TaskComponent } from './view/task/task.component';
     MainComponent,
     HeaderComponent,
     FormComponent,
-    TaskComponent
+    TaskComponent,
+    TaskListComponent,
+    LoginComponent
 
   ],
   imports: [
