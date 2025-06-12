@@ -14,6 +14,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getPerformance, providePerformance } from '@angular/fire/performance';
 import {AuthService} from './service/auth.service';
 import {AuthGuard} from '@angular/fire/auth-guard';
+import { LoaderComponent } from './view/loader/loader.component';
 
 const routes: Routes = [
   {
@@ -40,7 +41,8 @@ const routes: Routes = [
     FormComponent,
     TaskComponent,
     TaskListComponent,
-    LoginComponent
+    LoginComponent,
+    LoaderComponent
 
   ],
   imports: [

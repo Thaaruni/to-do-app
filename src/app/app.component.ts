@@ -1,19 +1,25 @@
-import { Component } from '@angular/core';
-import {Auth} from '@angular/fire/auth';
-import {AuthService} from './service/auth.service';
+import {Component, Optional} from '@angular/core';
+import {AuthService} from "./service/auth.service";
+import {LoaderComponent} from './view/loader/loader.component';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  template: `<router-outlet>
-
-  </router-outlet>`,
-  standalone: false,
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  imports: [
+    LoaderComponent,
+    RouterOutlet
+  ],
+  template: `
+    @if (!authService.isInitialized()) {
+      <app-loader/>
+    } @else {
+      <router-outlet/>
+    }
+  `
 })
 export class AppComponent {
-  initialized: boolean;
 
-  constructor(private authService: AuthService) {
-    this.initialized = authService.isInitialized();
+  constructor(public authService: AuthService) {
   }
 }
